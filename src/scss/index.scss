@@ -11,3 +11,44 @@
 
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+$logo-max-height: 40px;
+$logo-max-height-sm: 40px;
+$profile-img-max-height: 60px;
+
+
+.logo {
+ 
+  
+  @media (max-width: 576px) { 
+    max-width:180px ;
+  }
+
+  @media (min-width: 576px) {
+    width: 220px; 
+  }
+
+  @media (min-width: 768px) {
+    width: 270px; 
+  }
+
+  @media (min-width: 992px) {
+    width: 320px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 350px; 
+  }
+
+  @media (min-width: 1400px) {
+    width: 400px; 
+  }
+}
+                   
+
+
+
+.profile-img {
+  max-height: $profile-img-max-height; 
+  width: auto;                         
+}

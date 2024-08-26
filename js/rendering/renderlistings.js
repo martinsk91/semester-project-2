@@ -1,9 +1,9 @@
 import { listings } from "../listings/get.js";
 export function renderListings(){
-    console.log(listings.data[1].media[0].url)
+   
     const listingsContainer = 
     document.querySelector("#listingscontainer");
-    console.log(listings.data);
+  if(listingsContainer){
     listings.data.forEach(listing => {
     const listingDiv = document.createElement("div");
     const listingImg = document.createElement("img");
@@ -28,7 +28,7 @@ export function renderListings(){
         listingImg.classList.add("w-100", "rounded", "p-3", "img-fluid");
     });
 
-
+}
 }
 
 

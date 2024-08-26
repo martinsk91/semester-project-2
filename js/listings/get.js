@@ -1,7 +1,7 @@
 import {API_URL, listingsURL} from '../api/variabels.js'; 
 
 
-export async function getListings() {
+ async function getListings() {
     const listingURL = API_URL + listingsURL ;
     try {
         const response = await fetch(listingURL);
@@ -11,7 +11,7 @@ export async function getListings() {
         }
 
         const result = await response.json();
-        console.log(result);  
+          
         return result;
     } catch (error) {
         console.error("Error fetching listings:", error); 
@@ -19,4 +19,6 @@ export async function getListings() {
     }
 }
 
-getListings();
+export const listings = await getListings(); 
+
+

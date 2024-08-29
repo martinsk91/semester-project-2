@@ -7,7 +7,7 @@ export function renderTags(){
  const tagDiv = document.createElement("div");
  const button = document.createElement("button");
  tagDiv.classList.add("col-6", "col-sm-4", "col-md-3", "col-lg-2");
- button.classList.add("btn", "btn-link", "text-info", "w-100");
+ button.classList.add("btn", "text-info", "w-100");
     tagContainer.append(tagDiv);
     tagDiv.append(button);
     button.innerText = tag;

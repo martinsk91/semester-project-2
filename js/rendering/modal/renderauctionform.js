@@ -1,4 +1,4 @@
-import { tags } from "../variabels/tags.js";
+import { tags } from "../../variabels/tags.js";
 export function renderCreateAuction() {
     const modal = document.querySelector(".modal-body");
     modal.innerHTML = "";

@@ -1,6 +1,10 @@
+import { renderLoginForm } from "./renderloginform.js";
 export function notLoggedIn(){
+    
     const modal = document.querySelector(".modal-body");
+    modal.innerHTML = "";
     const footer =document.querySelector(".modal-footer");
+    footer.innerHTML ="";
     const text = document.createElement("p");
     const loginButton = document.createElement("button");
     const registerButton = document.createElement("button");
@@ -12,9 +16,13 @@ export function notLoggedIn(){
 
     registerButton.classList.add("btn", "text-primary", "btn-info")
     loginButton.classList.add("btn", "text-primary", "btn-success")
+    loginButton.addEventListener('click', renderLoginForm);
 
     modal.append(text);
     footer.append(loginButton, registerButton);
+
+    
+    
 
 
 }

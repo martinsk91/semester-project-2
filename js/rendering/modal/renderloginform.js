@@ -49,11 +49,20 @@ export function renderLoginForm(){
     loginButton.classList.add("btn", "btn-success");
     loginButton.innerText ="login";
     loginButton.addEventListener("click", renderCreateAuction)
+
+    const registerButton = document.createElement("button");
+    registerButton.classList.add("btn", "btn-info");
+    registerButton.innerText = "here";
     
 
     buttonDiv.append(loginButton);
     form.append(loginDiv, passwordDiv, buttonDiv);
 
     modal.append(form)
+
+    const footertext = document.createElement("p");
+    footertext.innerText = "If you do not hva an account sign up "
+
+    footer.append(footertext, registerButton)
 
 }

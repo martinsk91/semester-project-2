@@ -18,7 +18,7 @@ export function renderListings(){
        
         const title = document.createElement("h2");
         title.innerText = listing.title;
-        const descriptionInfo = document.createElement("p");
+        const descriptionInfo = document.createElement("h3");
         descriptionInfo.innerText = "Description:";
         const description = document.createElement("p");
         description.innerText = listing.description;

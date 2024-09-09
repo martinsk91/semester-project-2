@@ -1,5 +1,6 @@
 import { renderLoginForm } from "./renderloginform.js";
 import { renderRegisterForm } from "./renderregisterform.js";
+import { addRegisterListener } from "../../handlers/register.js";
 export function notLoggedIn(){
     
     const modal = document.querySelector(".modal-body");
@@ -17,6 +18,7 @@ export function notLoggedIn(){
 
     registerButton.classList.add("btn", "text-primary", "btn-info");
     registerButton.addEventListener('click', renderRegisterForm);
+    registerButton.addEventListener('click', addRegisterListener);
     
     loginButton.classList.add("btn", "text-primary", "btn-success");
     loginButton.addEventListener('click', renderLoginForm);

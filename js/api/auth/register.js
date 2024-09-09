@@ -29,16 +29,16 @@ export async function register(profile) {
     } catch (error) {
         console.error("Failed to register:", error);
     }
-   
+  
 }
 
-const profile = {
-    email: "example20111a11a1aa1a2a44.email@stud.noroff.no",
-    name: "HeiDu1112aa34a",
-    password: "heisann1234"
-}
+// const profile = {
+//     email: "example20111a11a1aa1a2a44.email@stud.noroff.no",
+//     name: "HeiDu1112aa34a",
+//     password: "heisann1234"
+// }
 
 
-register(profile);
+// register(profile);
 
 

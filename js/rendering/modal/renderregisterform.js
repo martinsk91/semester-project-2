@@ -1,4 +1,4 @@
-import { renderCreateAuction } from "./renderauctionform.js";
+// import { renderCreateAuction } from "./renderauctionform.js";
 import { renderLoginForm } from "./renderloginform.js";
 export function renderRegisterForm(){
     const modal = document.querySelector(".modal-body");
@@ -31,13 +31,13 @@ export function renderRegisterForm(){
         "justify-content-center", "align-items-center", "m-3");
   
     const labelForUsername = document.createElement("label");
-    labelForUsername.setAttribute("for", "username");
-    labelForUsername.textContent = "Username";
+    labelForUsername.setAttribute("for", "name");
+    labelForUsername.textContent = "name";
     
     const username = document.createElement("input");
     username.setAttribute("type", "text");
-    username.setAttribute("name", "username");
-    username.setAttribute("id" , "username");
+    username.setAttribute("name", "name");
+    username.setAttribute("id" , "name");
     username.classList.add("col-6", "rounded", "border", "border-info");
 
     usernameDiv.append(labelForUsername, username);
@@ -65,12 +65,15 @@ export function renderRegisterForm(){
     const registerButton = document.createElement("button");
     registerButton.classList.add("btn", "btn-success");
     registerButton.innerText ="Register";
-    registerButton.addEventListener("click", renderLoginForm)
+    registerButton.setAttribute("type", "submit")
+    // .then(registerButton.addEventListener("click", renderLoginForm))
+    // registerButton.addEventListener("click", renderLoginForm);
     
 
     buttonDiv.append(registerButton);
 
     form.append(emailDiv, usernameDiv, passwordDiv, buttonDiv);
+    form.setAttribute("id", "registerform")
 
     modal.append(form);
     

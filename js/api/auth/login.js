@@ -24,7 +24,7 @@ export async function login(profile) {
 
         const jsonResponse = await response.json();
         const { accessToken, ...user } = jsonResponse.data;
-    
+        console.log(user);
        
 
         save("token", accessToken);
@@ -38,5 +38,6 @@ export async function login(profile) {
 
 
 
+// hjibfasduifd@stud.noroff.no
 
 

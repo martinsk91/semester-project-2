@@ -19,8 +19,8 @@ export function renderLoginForm(){
     
     const login = document.createElement("input");
     login.setAttribute("type", "text");
-    login.setAttribute("name", "login");
-    login.setAttribute("id" , "login");
+    login.setAttribute("name", "email");
+    login.setAttribute("id" , "email");
     login.classList.add("col-6", "rounded", "border", "border-info");
 
     loginDiv.append(labelForLogin, login);
@@ -48,7 +48,7 @@ export function renderLoginForm(){
     const loginButton = document.createElement("button");
     loginButton.classList.add("btn", "btn-success");
     loginButton.innerText ="login";
-    loginButton.addEventListener("click", renderCreateAuction)
+    loginButton.setAttribute("type", "submit");
 
     const registerButton = document.createElement("button");
     registerButton.classList.add("btn", "btn-info");
@@ -57,6 +57,7 @@ export function renderLoginForm(){
 
     buttonDiv.append(loginButton);
     form.append(loginDiv, passwordDiv, buttonDiv);
+    form.setAttribute("id", "loginform");
 
     modal.append(form)
 

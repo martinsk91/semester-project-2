@@ -1,4 +1,5 @@
 import { register } from "../api/auth/register.js";
+import { renderLoginForm } from "../rendering/modal/renderloginform.js";
 
 export function addRegisterListener(){
     const form = document.querySelector("#registerform");
@@ -17,7 +18,10 @@ export function addRegisterListener(){
             password: password
         }
 
-        register(profile);
+        register(profile)
+        .then(()=> {
+            renderLoginForm();
+        });
         
     })
 }

@@ -1,4 +1,6 @@
 import { login } from "../api/auth/login.js";
+import { load } from "../storage/load.js";
+import { renderErrorMessage } from "../rendering/modal/loginerrormessage.js";
 
 export function addLoginListener(){
     const form = document.querySelector("#loginform");
@@ -15,7 +17,20 @@ export function addLoginListener(){
             email: email,
             password: password
         }
-        login(profile);
+        login(profile)
+        .then(()=> {
+            const token = load("token")
+            if(token){
+                window.location.reload();
+            }
+
+            else{
+                renderErrorMessage();
+            }
+        })
+    
+     
+        
     })
 
 }

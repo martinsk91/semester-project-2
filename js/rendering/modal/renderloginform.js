@@ -53,10 +53,14 @@ export function renderLoginForm(){
     const registerButton = document.createElement("button");
     registerButton.classList.add("btn", "btn-info");
     registerButton.innerText = "here";
+
+    const error = document.createElement("div");
+    error.classList.add("d-flex", "justify-content-center", "text-danger")
+    error.setAttribute("id", "error")
     
 
     buttonDiv.append(loginButton);
-    form.append(loginDiv, passwordDiv, buttonDiv);
+    form.append(loginDiv, passwordDiv, buttonDiv, error);
     form.setAttribute("id", "loginform");
 
     modal.append(form)

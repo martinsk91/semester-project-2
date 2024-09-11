@@ -14,7 +14,7 @@ renderListings();
 // renderCreateAuction();
 // notLoggedIn();
 checkUserLogin();
-// localStorage.clear();
+localStorage.clear();
 
 
 // hjibfasduifd@stud.noroff.no

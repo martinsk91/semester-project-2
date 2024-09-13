@@ -1,6 +1,7 @@
 import { notLoggedIn } from "./NotloggedIn.js";
 import { renderCreateAuction } from "./renderauctionform.js";
 import { load } from "../../storage/load.js";
+import { addCreateListingListener } from "../../handlers/create.js";
 
 
 export function checkUserLogin(){
@@ -8,6 +9,8 @@ export function checkUserLogin(){
     console.log(token);
     if(token){
         renderCreateAuction();
+        addCreateListingListener();
+    
     }
 
     else {

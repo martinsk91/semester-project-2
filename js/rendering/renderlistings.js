@@ -26,10 +26,11 @@ export function renderListings(){
         imageCropperDiv.append(listingImg);
         listingDiv.append(imageCropperDiv, title, descriptionInfo, description);
         listingsContainer.append(listingDiv);
+     
 
 
         imageCropperDiv.classList.add("image-cropper");
-        listingDiv.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3", "bg-secondary", "shadow-lg", "rounded");
+        listingDiv.classList.add("col-12", "col-sm-6", "col-md-5", "col-lg-3", "bg-secondary", "shadow-lg", "rounded");
     listingImg.classList.add("w-100", "rounded", "p-3", "img-fluid");
     });
 

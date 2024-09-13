@@ -4,6 +4,7 @@ export function renderCreateAuction() {
     modal.innerHTML = "";
    
     const form = document.createElement("form");
+    form.setAttribute("id", "auctionform");
 
    
     const titleDiv = document.createElement("div");
@@ -42,13 +43,13 @@ export function renderCreateAuction() {
     imgDiv.classList.add("d-flex", "flex-column", "justify-content-center", "align-items-center", "mt-3");
     
     const labelForImg = document.createElement("label");
-    labelForImg.setAttribute("for", "img");
+    labelForImg.setAttribute("for", "image");
     labelForImg.textContent = "Upload Image";
     
     const img = document.createElement("input");
     img.setAttribute("type", "text");
-    img.setAttribute("name", "img");
-    img.setAttribute("id", "img");
+    img.setAttribute("name", "image");
+    img.setAttribute("id", "image");
     img.classList.add("col-10", "rounded", "border", "border-info");
     
     imgDiv.append(labelForImg, img);
@@ -58,13 +59,13 @@ export function renderCreateAuction() {
     dateTimeDiv.classList.add("d-flex", "flex-column", "justify-content-center", "align-items-center", "mt-3");
 
     const labelForDateTime = document.createElement("label");
-    labelForDateTime.setAttribute("for", "datetime");
+    labelForDateTime.setAttribute("for", "endsAt");
     labelForDateTime.textContent = "Select Date and Time";
 
     const dateTime = document.createElement("input");
     dateTime.setAttribute("type", "datetime-local");
-    dateTime.setAttribute("id", "datetime");
-    dateTime.setAttribute("name", "datetime");
+    dateTime.setAttribute("id", "endsAt");
+    dateTime.setAttribute("name", "endsAt");
     dateTime.classList.add("col-10", "rounded", "border", "border-info");
 
     dateTimeDiv.append(labelForDateTime, dateTime);
@@ -73,12 +74,12 @@ export function renderCreateAuction() {
     tagsDiv.classList.add("d-flex", "flex-column", "justify-content-center", "align-items-center", "mt-3");
 
     const labelForTags = document.createElement("label");
-    labelForTags.setAttribute("for", "tags");
+    labelForTags.setAttribute("for", "tag");
     labelForTags.textContent = "Category";
 
     const selectTags = document.createElement("select");
-    selectTags.setAttribute("id", "tags");
-    selectTags.setAttribute("name", "tags");
+    selectTags.setAttribute("id", "tag");
+    selectTags.setAttribute("name", "tag");
     selectTags.classList.add("col-10", "rounded", "border", "border-info");
 
   
@@ -91,8 +92,18 @@ export function renderCreateAuction() {
 
     tagsDiv.append(labelForTags, selectTags);
 
+    const buttonDiv = document.createElement("div");
+    buttonDiv.classList.add("d-flex", "flex-column", "justify-content-center", "align-items-center", "mt-3");
+
+    const submitButton = document.createElement("button");
+    submitButton.setAttribute("type", "submit");
+    submitButton.classList.add("btn", "btn-success");
+    submitButton.innerText = "Post"
+
+    buttonDiv.append(submitButton);
+
 
     
-    form.append(titleDiv, descriptionDiv, tagsDiv, imgDiv, dateTimeDiv);
+    form.append(titleDiv, descriptionDiv, tagsDiv, imgDiv, dateTimeDiv, buttonDiv);
     modal.append(form);
 }

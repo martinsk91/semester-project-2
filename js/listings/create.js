@@ -13,7 +13,9 @@ export async function createListing(listing) {
 
     const result = await response.json();
     console.log(result);
+    
     return result
+    
     
 }
 

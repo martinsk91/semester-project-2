@@ -1,4 +1,6 @@
 import {tags} from "../variabels/tags.js"
+// import { listings } from "../listings/get.js";
+import { addFiltering } from "../listings/filtering.js";
 
 export function renderTags(){
  const tagContainer = document.querySelector("#tagcontainer");
@@ -11,6 +13,7 @@ export function renderTags(){
     tagContainer.append(tagDiv);
     tagDiv.append(button);
     button.innerText = tag;
+    button.addEventListener('click', () => addFiltering(tag));
  })
 
 }

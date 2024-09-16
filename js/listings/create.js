@@ -19,3 +19,11 @@ export async function createListing(listing) {
     
 }
 
+// const listing = {
+//     title: "title",
+//     description: "description",
+//     media: {
+//         url: "",
+//         alt: "",
+//     }
+// }

@@ -5,12 +5,14 @@ import { notLoggedIn } from "./rendering/modal/NotloggedIn.js";
 import { addRegisterListener } from "./handlers/register.js";
 // import { addLoginListener } from "./handlers/login.js";
 import { checkUserLogin } from "./rendering/modal/checkuserlogin.js";
+import { listings } from "./listings/get.js";
+const allListings = listings.data;
 
 const createAuctinButton = document.querySelector("#modal-button");
 // createAuctinButton.addEventListener('click', notLoggedIn)
 
 renderTags();
-renderListings();
+renderListings(allListings);
 // renderCreateAuction();
 // notLoggedIn();
 checkUserLogin();

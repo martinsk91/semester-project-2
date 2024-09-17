@@ -1,3 +1,6 @@
+import { logOut } from "../api/auth/logout.js";
+import { addLoginListener } from "../handlers/login.js";
+import { addRegisterListener } from "../handlers/register.js";
 import { load } from "../storage/load.js";
 import { renderLoginForm } from "./modal/renderloginform.js";
 import { renderRegisterForm } from "./modal/renderregisterform.js";
@@ -24,7 +27,7 @@ export function checkUser(){
         userImg.classList.add("img-fluid", "profile-img");
         signOutButton.innerText ="Sign Out";
         signOutButton.classList.add("btn","text-start", "text-danger", "w-100", "p-0");
-        // signOutButton.addEventListener('click', () => logOut)
+        signOutButton.addEventListener('click', logOut);
         userDiv.append(userImg, userName, credits, signOutButton);
 
     }
@@ -40,6 +43,7 @@ export function checkUser(){
         signInButton.setAttribute('data-bs-toggle', 'modal');
         signInButton.setAttribute('data-bs-target', '#auctionModal');
         signInButton.addEventListener('click', renderLoginForm);
+        signInButton.addEventListener('click', addLoginListener);
 
         const registerButton = document.createElement("button");
         registerButton.classList.add("btn", "btn-info", "col-6", "my-1");
@@ -47,6 +51,7 @@ export function checkUser(){
         registerButton.setAttribute('data-bs-toggle', 'modal');
         registerButton.setAttribute('data-bs-target', '#auctionModal');
         registerButton.addEventListener('click', renderRegisterForm);
+        registerButton.addEventListener('click', addRegisterListener);
         userDiv.append(message, signInButton, registerButton);
 
     }

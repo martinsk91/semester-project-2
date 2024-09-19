@@ -2,7 +2,7 @@ import { createListing } from "../listings/create.js";
 
 export function addCreateListingListener(){
     const form = document.querySelector("#auctionform");
-
+    if(form){
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         const form = event.target;
@@ -31,5 +31,7 @@ export function addCreateListingListener(){
     
         
     })
+}
+
 }
  

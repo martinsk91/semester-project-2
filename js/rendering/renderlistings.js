@@ -59,7 +59,7 @@ export function renderListings(list){
                 listingImg.src = listing.media[0].url; 
                 listingImg.alt = listing.title;
                 // console.log(listing);
-                console.log(listing.media[0]);
+                console.log(listing);
              } 
             
 

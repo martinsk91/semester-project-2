@@ -67,14 +67,14 @@ const myListings = document.querySelector("#listings");
 // }
 
 if (myListings) {
-    // Create a Bootstrap row for the grid
+   
     const listingsRow = document.createElement("div");
-    listingsRow.classList.add("row", "gy-4"); // 'gy-4' adds vertical gutter between rows
+    listingsRow.classList.add("row", "gy-4"); 
 
     userlistingsData.forEach(listing => {
-        // Create a Bootstrap column
+       
         const col = document.createElement("div");
-        col.classList.add("col-12", "col-md-6", "col-lg-4"); // Responsive column size
+        col.classList.add("col-12", "col-md-6", "col-lg-4"); 
 
         const dropDown = document.createElement("details");
         dropDown.classList.add("mb-3");
@@ -84,7 +84,7 @@ if (myListings) {
         summary.innerText = listing.title;
 
         const link = document.createElement("a");
-        link.href = "#"; // Placeholder, you can add actual links here
+        link.href = "#"; 
 
         const contentDiv = document.createElement("div");
         contentDiv.classList.add("d-flex", "flex-column", "align-items-center");
@@ -95,16 +95,13 @@ if (myListings) {
         if (listing.media && listing.media.length > 0) {
             image.src = listing.media[0].url;
             image.alt = listing.media[0].alt;
-        } else {
-            image.src = "/images/default-image.png"; // Fallback image if none is provided
-            image.alt = "Default Image";
-        }
+        } 
 
         const description = document.createElement("p");
         description.classList.add("text-center");
         description.innerText = listing.description;
 
-        // Append elements to create the full structure using `append`
+        
         contentDiv.append(image, description);
         link.append(contentDiv);
         dropDown.append(summary, link);
@@ -112,7 +109,7 @@ if (myListings) {
         listingsRow.append(col);
     });
 
-    // Append the created row to the listings container
+   
     myListings.append(listingsRow);
 }
 

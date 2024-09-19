@@ -1,6 +1,7 @@
 import { tags } from "../../variabels/tags.js";
 export function renderCreateAuction() {
     const modal = document.querySelector(".modal-body");
+    if(modal){
     modal.innerHTML = "";
    
     const form = document.createElement("form");
@@ -83,11 +84,18 @@ export function renderCreateAuction() {
     selectTags.classList.add("col-10", "rounded", "border", "border-info");
 
   
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.textContent = "--";
+    
+    selectTags.append(defaultOption);
+
     tags.forEach(tag => {
         const option = document.createElement("option");
         option.setAttribute("value", tag);
         option.textContent = tag;
-        selectTags.appendChild(option);
+        selectTags.append(option);
+        
     });
 
     tagsDiv.append(labelForTags, selectTags);
@@ -106,4 +114,6 @@ export function renderCreateAuction() {
     
     form.append(titleDiv, descriptionDiv, tagsDiv, imgDiv, dateTimeDiv, buttonDiv);
     modal.append(form);
+}
+
 }

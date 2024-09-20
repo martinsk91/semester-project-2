@@ -9,6 +9,17 @@ import { listings } from "./listings/get.js";
 import { checkUser } from "./rendering/renderuser.js";
 import { renderProfile } from "./rendering/renderprofile.js";
 import { getUserListings } from "./listings/userlistings.js";
+// import { consoleLogID } from "./listings/createid.js";
+// import { idURL } from "./listings/createid.js";
+import { getSpecificListing } from "./listings/createid.js";
+const specificListing = await getSpecificListing();
+console.log(specificListing.data);
+
+
+
+
+
+// consoleLogID();
 
 const allListings = listings.data;
 
@@ -32,6 +43,10 @@ renderProfile();
 
 
 getUserListings();
+
+
+
+
 
 
 

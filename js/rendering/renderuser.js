@@ -25,7 +25,7 @@ export async function checkUser(){
         
         userName.innerText = name;
         const userProfile = await fetchProfileInfo(name);
-        userName.classList.add("mb-0")
+        userName.classList.add("mb-0", "text-success")
         credits.innerText = `credits: ${userProfile.data.credits}`
         credits.classList.add("mb-0");
         userImg.src = userProfile.data.avatar.url;
@@ -34,7 +34,7 @@ export async function checkUser(){
         signOutButton.classList.add("btn","text-start", "text-danger", "w-100", "p-0");
         signOutButton.addEventListener('click', logOut);
         link.href = "/profile";
-        link.classList.add("text-success", "text-decoration-none")
+        link.classList.add("text-decoration-none")
         link.append(userName);
         userDiv.append(userImg, link, credits, signOutButton);
 

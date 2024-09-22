@@ -4,6 +4,8 @@ import { renderRegisterForm } from "./renderregisterform.js";
 export function renderLoginForm(){
     const modal = document.querySelector(".modal-body");
     modal.innerHTML = "";
+    const modalHeader = document.querySelector(".modal-title");
+    modalHeader.innerText = "Sign in";
 
     const footer = document.querySelector(".modal-footer");
     footer.innerHTML ="";

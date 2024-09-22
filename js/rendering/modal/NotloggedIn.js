@@ -6,6 +6,8 @@ export function notLoggedIn(){
     
     const modal = document.querySelector(".modal-body");
     if(modal){
+        const modalHeader = document.querySelector(".modal-title");
+        modalHeader.innerText = "Login or Register";
     modal.innerHTML = "";
     const footer =document.querySelector(".modal-footer");
     footer.innerHTML ="";

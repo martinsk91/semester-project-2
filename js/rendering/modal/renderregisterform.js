@@ -8,11 +8,8 @@ export function renderRegisterForm(){
     const modalFooter = document.querySelector(".modal-footer");
     modalFooter.innerHTML ="";
 
-    // const modalHeader = document.querySelector("modal-header");
-
-    // const modalHeading = document.createElement("h5");
-    // modalHeading.innerText = "Register User";
-    // modalHeader.append(modalHeading);
+    const modalHeader = document.querySelector(".modal-title");
+    modalHeader.innerText = "Register User";
 
     const form = document.createElement("form");
 

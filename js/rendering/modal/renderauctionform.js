@@ -3,6 +3,8 @@ export function renderCreateAuction() {
     const modal = document.querySelector(".modal-body");
     if(modal){
     modal.innerHTML = "";
+    const modalHeader = document.querySelector(".modal-title");
+    modalHeader.innerText = "Create Auction";
    
     const form = document.createElement("form");
     form.setAttribute("id", "auctionform");

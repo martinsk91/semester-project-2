@@ -16,9 +16,9 @@ export async function renderProfile(){
         profileimg.src = avatar.url;
         profileimg.alt = avatar.alt;
         username.innerText = name;
-        console.log(profile);
+        
         const userProfile = await fetchProfileInfo(name);
-        console.log(userProfile);
+    
 
     }
 }

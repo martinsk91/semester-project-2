@@ -22,7 +22,7 @@ export function renderListings(list){
     if(list.length > 0){
         list.forEach(listing => {
             const formatedtime = formatTime(listing.endsAt);
-            console.log(listing.endsAt);
+           
        
 
             const link = document.createElement("a");

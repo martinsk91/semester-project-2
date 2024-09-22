@@ -20,7 +20,6 @@ const userListingsURL = variabels.API_URL +
 
 const userlistings = await getUserListingsFetch(userListingsURL);
 const userlistingsData = userlistings.data;
-console.log(userlistingsData);
 const myListings = document.querySelector("#listings");
 
 

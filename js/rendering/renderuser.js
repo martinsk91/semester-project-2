@@ -24,7 +24,6 @@ export async function checkUser(){
         const {name, avatar} = profile;
         userName.innerText = name;
         const userProfile = await fetchProfileInfo(name);
-        console.log(userProfile);
         userName.classList.add("mb-0")
         credits.innerText = `credits: ${userProfile.data.credits}`
         credits.classList.add("mb-0");

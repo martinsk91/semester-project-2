@@ -6,7 +6,6 @@ import { addCreateListingListener } from "../../handlers/create.js";
 
 export function checkUserLogin(){
     const token = load("token");
-    console.log(token);
     if(token){
         renderCreateAuction();
         addCreateListingListener();

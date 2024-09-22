@@ -38,14 +38,16 @@ export function renderListings(list){
 
             if (listing.media && listing.media.length > 0) {
                 // listingImg.src = listing.media[0].url; 
-                listingImg.src = "/images/placeholder.jpg"; 
+                listingImg.src = listing.media[0].url; 
                 listingImg.alt = listing.title;
                 
                 
              } 
 
              else {
-                listingImg.src = "/images/placeholder.jpg"; 
+                listingImg.src = "/images/placeholder.jpg";
+                listingImg.alt = "no image"
+
              }
             
 

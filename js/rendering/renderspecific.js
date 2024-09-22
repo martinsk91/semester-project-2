@@ -20,7 +20,7 @@ export async function renderSpecificListing(){
 
     image.classList.add("card-img", "img-fluid");
     if(imageDiv && heading && description){
-    const specificListing = await getSpecificListing();
+        const specificListing = await getSpecificListing();
     const specific = specificListing.data
     const bidLength = specific.bids.length;  
 

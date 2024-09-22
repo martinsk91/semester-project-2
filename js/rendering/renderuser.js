@@ -1,18 +1,21 @@
 import { logOut } from "../api/auth/logout.js";
+import { fetchProfileInfo } from "../api/auth/profilefetch.js";
 import { addLoginListener } from "../handlers/login.js";
 import { addRegisterListener } from "../handlers/register.js";
 import { load } from "../storage/load.js";
 import { renderLoginForm } from "./modal/renderloginform.js";
 import { renderRegisterForm } from "./modal/renderregisterform.js";
 
-export function checkUser(){
+export async function checkUser(){
     const userDiv = document.querySelector("#user");
     const userImg = document.createElement("img");
+    const link = document.createElement("a");
     const userName = document.createElement("p");
     const credits = document.createElement("p");
     const signOutButton = document.createElement("button");
     const token = load("token");
     const profile = load("profile");
+   
    
     
     
@@ -20,15 +23,20 @@ export function checkUser(){
     if(token){
         const {name, avatar} = profile;
         userName.innerText = name;
+        const userProfile = await fetchProfileInfo(name);
+        console.log(userProfile);
         userName.classList.add("mb-0")
-        credits.innerText = `credits:`
+        credits.innerText = `credits: ${userProfile.data.credits}`
         credits.classList.add("mb-0");
         userImg.src = avatar.url;
         userImg.classList.add("img-fluid", "profile-img");
         signOutButton.innerText ="Sign Out";
         signOutButton.classList.add("btn","text-start", "text-danger", "w-100", "p-0");
         signOutButton.addEventListener('click', logOut);
-        userDiv.append(userImg, userName, credits, signOutButton);
+        link.href = "/profile";
+        link.classList.add("text-success", "text-decoration-none")
+        link.append(userName);
+        userDiv.append(userImg, link, credits, signOutButton);
 
     }
 
@@ -38,7 +46,7 @@ export function checkUser(){
         message.innerText = "Sign in or register new account here:"
         message.classList.add("text-info");
         const signInButton = document.createElement("button");
-        signInButton.classList.add("btn", "btn-success", "col-6", "my-1");
+        signInButton.classList.add("btn", "btn-success", "col-12", "col-md-6", "my-1");
         signInButton.innerText = "Sign in";
         signInButton.setAttribute('data-bs-toggle', 'modal');
         signInButton.setAttribute('data-bs-target', '#auctionModal');
@@ -46,7 +54,7 @@ export function checkUser(){
         signInButton.addEventListener('click', addLoginListener);
 
         const registerButton = document.createElement("button");
-        registerButton.classList.add("btn", "btn-info", "col-6", "my-1");
+        registerButton.classList.add("btn", "btn-info","col-12", "col-md-6", "my-1");
         registerButton.innerText = "Register";
         registerButton.setAttribute('data-bs-toggle', 'modal');
         registerButton.setAttribute('data-bs-target', '#auctionModal');

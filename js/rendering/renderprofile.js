@@ -1,6 +1,7 @@
+import { fetchProfileInfo } from "../api/auth/profilefetch.js";
 import { load } from "../storage/load.js";
 
-export function renderProfile(){
+export async function renderProfile(){
     const token = load("token");
     const profile = load("profile");
     const username = document.querySelector("#profilename");
@@ -16,6 +17,8 @@ export function renderProfile(){
         profileimg.alt = avatar.alt;
         username.innerText = name;
         console.log(profile);
+        const userProfile = await fetchProfileInfo(name);
+        console.log(userProfile);
 
     }
 }

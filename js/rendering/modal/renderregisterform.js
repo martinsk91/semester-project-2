@@ -1,9 +1,9 @@
-// import { renderCreateAuction } from "./renderauctionform.js";
+
 import { renderLoginForm } from "./renderloginform.js";
 export function renderRegisterForm(){
     const modal = document.querySelector(".modal-body");
     modal.innerHTML = "";
-    console.log(modal);
+  
 
     const modalFooter = document.querySelector(".modal-footer");
     modalFooter.innerHTML ="";
@@ -75,7 +75,14 @@ export function renderRegisterForm(){
     form.setAttribute("id", "registerform")
 
     modal.append(form);
-    
-    modalFooter.append
+    const footerText =document.createElement("p");
+    footerText.innerText = "If you do not hva an account sign up ";
+    footerText.classList.add("text-info")
+    const loginButton = document.createElement("button");
+    loginButton.innerText = "here";
+    loginButton.addEventListener('click', renderLoginForm);
+    loginButton.classList.add("btn", "btn-info")    
+
+    modalFooter.append(footerText, loginButton)
 
 }

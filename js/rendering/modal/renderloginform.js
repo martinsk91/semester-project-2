@@ -1,4 +1,5 @@
 import { renderCreateAuction } from "./renderauctionform.js";
+import { renderRegisterForm } from "./renderregisterform.js";
 
 export function renderLoginForm(){
     const modal = document.querySelector(".modal-body");
@@ -53,6 +54,7 @@ export function renderLoginForm(){
     const registerButton = document.createElement("button");
     registerButton.classList.add("btn", "btn-info");
     registerButton.innerText = "here";
+    registerButton.addEventListener('click', renderRegisterForm)
 
     const error = document.createElement("div");
     error.classList.add("d-flex", "justify-content-center", "text-danger")

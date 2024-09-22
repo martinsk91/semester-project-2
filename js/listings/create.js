@@ -12,18 +12,10 @@ export async function createListing(listing) {
     })
 
     const result = await response.json();
-    console.log(result);
+    
     
     return result
     
     
 }
 
-// const listing = {
-//     title: "title",
-//     description: "description",
-//     media: {
-//         url: "",
-//         alt: "",
-//     }
-// }

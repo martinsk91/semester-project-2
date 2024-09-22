@@ -28,7 +28,7 @@ export async function renderProfile(){
         
         
        
-        // updateAvatar(name, "https://www.athenas.no/wp-content/uploads/omslag-40-scaled-e1637833798547.jpg")
+       
     
 
     }

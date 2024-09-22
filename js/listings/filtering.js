@@ -8,5 +8,5 @@ export function addFiltering(tag) {
     });
 
     renderListings(filteredListings);
-    console.log(filteredListings);  
+ 
 }

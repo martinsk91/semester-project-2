@@ -66,8 +66,7 @@ export function renderRegisterForm(){
     registerButton.classList.add("btn", "btn-success");
     registerButton.innerText ="Register";
     registerButton.setAttribute("type", "submit")
-    // .then(registerButton.addEventListener("click", renderLoginForm))
-    // registerButton.addEventListener("click", renderLoginForm);
+
     
 
     buttonDiv.append(registerButton);

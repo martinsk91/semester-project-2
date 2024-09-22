@@ -29,7 +29,6 @@ renderTags();
 renderListings(allListings);
 checkUserLogin();
 checkUser();
-// hjibfasduifd@stud.noroff.no
 renderProfile();
 getUserListings();
 renderSpecificListing();

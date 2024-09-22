@@ -8,7 +8,7 @@ export async function fetchProfileInfo(name) {
         headers: headers()
     });
     const result = await response.json(); 
-    // console.log(result);
+   
     return result
     
 }

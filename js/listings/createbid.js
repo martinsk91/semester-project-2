@@ -21,7 +21,7 @@ export async function placeBid(listingId, bidAmount) {
       const result = await response.json();
   
    
-      console.log('Bid placed:', result);
+      
       
       return result;  
     } catch (error) {

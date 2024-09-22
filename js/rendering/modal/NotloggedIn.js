@@ -5,6 +5,7 @@ import { addLoginListener } from "../../handlers/login.js";
 export function notLoggedIn(){
     
     const modal = document.querySelector(".modal-body");
+    if(modal){
     modal.innerHTML = "";
     const footer =document.querySelector(".modal-footer");
     footer.innerHTML ="";
@@ -30,6 +31,6 @@ export function notLoggedIn(){
 
     
     
-
+    }
 
 }

@@ -16,7 +16,7 @@ export function addCreateListingListener(){
         const listing = {
             title: title,
             description: description,
-            tag: tag,
+            tags: [tag],
             media: [{
                 url: image,
                 alt: title

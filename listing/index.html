@@ -3,70 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listing Details - Bike</title>
+    <title>Listing Details</title>
     <link rel="stylesheet" href="/dist/css/index.css">
     <script src="/js/index.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <!-- Header -->
+
     <header class="container-fluid bg-secondary d-flex justify-content-around align-items-center">
         <a href="/"><img src="/images/Group 1.png" alt="logo" class="logo img-fluid"></a> 
          <div class="d-flex justify-content-end align-items-center w-25" >
              <div id="user">
-                 <!-- <img src="/images/pro-img.jpg" alt="pro-img" class="img-fluid profile-img">
-                 <div class="d-flex flex-column align-items-center justify-content-center">
-                 <p class="text-info align-self-flex-end" id="Username"></p>
-                 <p class="text-info">Credits: 1000</p>
-                 </div> -->
+           
              </div>
              
          </div>
      </header>
-
-    <!-- Main Content -->
+    
+    
+  
+    <div class="modal fade" id="auctionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create Auction</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                   
+                </div>
+                <div class="modal-footer d-flex justify-content-center
+                ">
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+  
     <main class="container mt-5 vh-100">
         <div class="row">
-            <!-- Image Section -->
+
             <div class="col-12 col-md-6">
-                <div class="card shadow-sm">
-                    <img src="/images/bike 4.png" class="card-img-top img-fluid" alt="Bike">
+                <div class="card shadow-sm" id="specificimgdiv">
+                   
                 </div>
             </div>
 
-            <!-- Details Section -->
+            
             <div class="col-12 col-md-6">
                 <div class="card shadow-sm p-4">
-                    <h2 class="card-title text-center">Bike</h2>
-                    <p class="card-text text-muted text-center mb-4">This is a description of the bike. It's a great bike for daily commuting or recreational rides. The bike is in excellent condition and ready to be used right away.</p>
+                    <h1 class="card-title text-center" id="specificheading"></h1>
+                <p class="card-text text-muted text-center mb-4" id="specificdescription"></p>
 
-                    <!-- Specifications -->
-               <p>current bid: 0</p>
-            <form action="" class="d-flex flex-row">
-                <input type="text" name="" id="" class="col-4">
-                <button class="btn btn-success col-4 mx-4">place bid</button>
+                    
+               <p id="currentbid">current bid: 0</p>
+
+            <form action="submit" class="d-flex flex-row" id="bidform">
+                <input type="text" name="" id="bidfield" class="col-4">
+                <button class="btn btn-success col-4 mx-4" type="submit">place bid</button>
             </form>
-
-                    <!-- Call to Action Buttons -->
-                    <!-- <div class="d-flex justify-content-center">
-                        <a href="#" class="btn btn-success mx-2">Contact Seller</a>
-                        <a href="#" class="btn btn-primary mx-2">Add to Favorites</a>
-                    </div> -->
+                <div id="biderror"></div>
+             
                 </div>
             </div>
         </div>
 
-        <!-- Additional Details -->
+
  
     </main>
 
-    <!-- Footer -->
+    
     <footer class="bg-secondary py-3 mt-5">
         <div class="container text-center">
             <p class="text-white mb-0">© 2024 Auctionhouse. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
+  
 </body>
 </html>

@@ -1,4 +1,4 @@
-// /auction/profiles/<name>
+
 import { API_URL } from "../variabels.js"
 import { headers } from "./fetchtoken.js";
 
@@ -8,7 +8,7 @@ export async function fetchProfileInfo(name) {
         headers: headers()
     });
     const result = await response.json(); 
-    
+    // console.log(result);
     return result
     
 }

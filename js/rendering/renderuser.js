@@ -21,13 +21,14 @@ export async function checkUser(){
     
     if(userDiv){
     if(token){
-        const {name, avatar} = profile;
+        const {name} = profile;
+        
         userName.innerText = name;
         const userProfile = await fetchProfileInfo(name);
         userName.classList.add("mb-0")
         credits.innerText = `credits: ${userProfile.data.credits}`
         credits.classList.add("mb-0");
-        userImg.src = avatar.url;
+        userImg.src = userProfile.data.avatar.url;
         userImg.classList.add("img-fluid", "profile-img");
         signOutButton.innerText ="Sign Out";
         signOutButton.classList.add("btn","text-start", "text-danger", "w-100", "p-0");
@@ -36,6 +37,7 @@ export async function checkUser(){
         link.classList.add("text-success", "text-decoration-none")
         link.append(userName);
         userDiv.append(userImg, link, credits, signOutButton);
+
 
     }
 

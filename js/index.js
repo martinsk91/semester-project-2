@@ -19,7 +19,7 @@ import { renderSpecificListing } from "./rendering/renderspecific.js";
 
 
 
-const allListings = listings.data;
+export const allListings = listings.data;
 
 const createAuctinButton = document.querySelector("#modal-button");
 if(createAuctinButton){

@@ -8,6 +8,12 @@ export function renderRegisterForm(){
     const modalFooter = document.querySelector(".modal-footer");
     modalFooter.innerHTML ="";
 
+    // const modalHeader = document.querySelector("modal-header");
+
+    // const modalHeading = document.createElement("h5");
+    // modalHeading.innerText = "Register User";
+    // modalHeader.append(modalHeading);
+
     const form = document.createElement("form");
 
     const emailDiv = document.createElement("div");
@@ -23,6 +29,8 @@ export function renderRegisterForm(){
     email.setAttribute("name", "email");
     email.setAttribute("id" , "email");
     email.classList.add("col-6", "rounded", "border", "border-info");
+    email.setAttribute("required", true);
+    email.setAttribute("pattern", "^[\\w\\-.]+@(stud\\.)?noroff.no$");
 
     emailDiv.append(labelForEmail, email);
 
@@ -39,6 +47,8 @@ export function renderRegisterForm(){
     username.setAttribute("name", "name");
     username.setAttribute("id" , "name");
     username.classList.add("col-6", "rounded", "border", "border-info");
+    username.setAttribute("required", true);
+
 
     usernameDiv.append(labelForUsername, username);
 
@@ -54,6 +64,7 @@ export function renderRegisterForm(){
     password.setAttribute("type", "password");
     password.setAttribute("name", "password");
     password.setAttribute("id" , "password");
+    username.setAttribute("required", true);
     password.classList.add("col-6", "rounded", "border", "border-info");
 
     passwordDiv.append(labelForPassword, password);
@@ -76,7 +87,7 @@ export function renderRegisterForm(){
 
     modal.append(form);
     const footerText =document.createElement("p");
-    footerText.innerText = "If you do not hva an account sign up ";
+    footerText.innerText = "If you alredy have an account click ";
     footerText.classList.add("text-info")
     const loginButton = document.createElement("button");
     loginButton.innerText = "here";

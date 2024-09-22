@@ -10,6 +10,8 @@ export async function renderProfile(){
     const username = document.querySelector("#profilename");
     const profileimg = document.querySelector("#profileimg");
     const editButton = document.querySelector("#editimg");
+    const credits = document.querySelector("#credits");
+    
     
 
     if(username && profileimg){
@@ -22,6 +24,7 @@ export async function renderProfile(){
         username.classList.add("text-success");
         editButton.addEventListener('click', showInputField);
         const userProfile = await fetchProfileInfo(name);
+        credits.innerText = "credits: " + userProfile.data.credits
         profileimg.src = userProfile.data.avatar.url;
         profileimg.alt = userProfile.data.avatar.alt;
         addUpdateListener(name);

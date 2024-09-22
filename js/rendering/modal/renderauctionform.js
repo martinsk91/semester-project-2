@@ -21,6 +21,8 @@ export function renderCreateAuction() {
     title.setAttribute("type", "text");
     title.setAttribute("name", "title");
     title.setAttribute("id", "title");
+    title.setAttribute("required", true);
+    
     title.classList.add("col-10", "rounded", "border", "border-info");
     
     titleDiv.append(labelForTitle, title);
@@ -37,7 +39,8 @@ export function renderCreateAuction() {
     description.setAttribute("name", "description");
     description.setAttribute("id", "description");
     description.classList.add("col-10", "rounded", "border", "border-info");
-    description.setAttribute("rows", "5"); 
+    description.setAttribute("rows", "5")
+    description.setAttribute("required", true); 
     
     descriptionDiv.append(labelForDescription, description);
 
@@ -53,6 +56,7 @@ export function renderCreateAuction() {
     img.setAttribute("type", "text");
     img.setAttribute("name", "image");
     img.setAttribute("id", "image");
+    img.setAttribute("required", true);
     img.classList.add("col-10", "rounded", "border", "border-info");
     
     imgDiv.append(labelForImg, img);
@@ -69,6 +73,7 @@ export function renderCreateAuction() {
     dateTime.setAttribute("type", "datetime-local");
     dateTime.setAttribute("id", "endsAt");
     dateTime.setAttribute("name", "endsAt");
+    dateTime.setAttribute("required", true);
     dateTime.classList.add("col-10", "rounded", "border", "border-info");
 
     dateTimeDiv.append(labelForDateTime, dateTime);

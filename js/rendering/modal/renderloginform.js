@@ -24,6 +24,7 @@ export function renderLoginForm(){
     login.setAttribute("type", "text");
     login.setAttribute("name", "email");
     login.setAttribute("id" , "email");
+    login.setAttribute("required", true);
     login.classList.add("col-6", "rounded", "border", "border-info");
 
     loginDiv.append(labelForLogin, login);
@@ -40,6 +41,7 @@ export function renderLoginForm(){
     password.setAttribute("type", "password");
     password.setAttribute("name", "password");
     password.setAttribute("id", "password");
+    password.setAttribute("required", true);
     password.classList.add("col-6", "rounded", "border", "border-info");
 
     passwordDiv.append(labelForPassword, password);
